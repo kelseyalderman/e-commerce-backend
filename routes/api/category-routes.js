@@ -43,6 +43,7 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new category
+// expects {category_name: "underwear"}
 router.post("/", (req, res) => {
   Category.create(req.body)
     .then((categoryData) => res.json(categoryData))
@@ -50,6 +51,7 @@ router.post("/", (req, res) => {
 });
 
 // update a category by its `id` value
+// expects {category_name: "undergarments"}
 router.put("/:id", (req, res) => {
   Category.update(req.body, {
     where: {
